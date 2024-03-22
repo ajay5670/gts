@@ -1,2 +1,16 @@
- name
- on
+name: Trigger Workflow in Another Repo
+
+on:
+  push:
+    branches:
+      - main  
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Workflow in Another Repo
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.TRIGER_TOKEN }} 
+          repository: ajay5670/vgts  
+          event-type: execute-workflow
