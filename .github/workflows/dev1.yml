@@ -12,5 +12,5 @@ jobs:
         uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.TRIGER_TOKEN }} 
-          repository: ajay5670/vgts  
+          repository: ajay5670/vgts/.github/workflows 
           event-type: execute-workflow
